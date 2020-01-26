@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="p-1 mb-1">{% block title %}Account{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% block account %}
+  <div class="_alignCenter">
+    <div class="card _width75" style="margin-left: 12.5%;">
+      <br>
+      <div>
+        <h3 class="text-bold">{{ account['username'] }}</h3>
+        <div class="text-small mb-1">{{ account['date_created'].strftime('%B %d, %Y') }}<hr></div>
+      </div>
+      <h4>API Key</h4>
+      <p class="body">{{ account['api_key'] }}</p>
+      <br>
+    </div>
+  </div>
+  {% endblock %}
+{% endblock %}

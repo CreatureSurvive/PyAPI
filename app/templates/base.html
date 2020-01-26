@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://rawgit.com/outboxcraft/beauter/master/beauter.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <title>{% block title %}{{title}}{% endblock %} - PyAPI</title>
+  </head>
+  <body class="">
+    <ul class="topnav" id="navbar">
+      <li><a class="brand" href="{{ url_for('app_index') }}">PyAPI</a></li>
+      {% if g.account %}
+        <li style="float:right"><a class="_f-primary" href="{{ url_for('account_index') }}">{{ g.account['username'] }}</a></li>
+        <li style="float:right"><a href="{{ url_for('logout_index') }}">Log Out</a></li>
+      {% else %}
+        <li style="float:right"><a href="{{ url_for('register_index') }}">Register</a>
+        <li style="float:right"><a href="{{ url_for('login_index') }}">Log In</a>
+      {% endif %}
+      <li class="-icon">
+          <a href="javascript:void(0);" onclick="topnav('navbar')">☰</a>
+      </li>
+    </ul>
+    <section class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="text-container">
+          <dir class="center-text">
+            {{ message }}
+          </dir>
+        </div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+    <script async defer src="https://rawgit.com/outboxcraft/beauter/master/beauter.min.js"></script>
+  </body>
+</html>

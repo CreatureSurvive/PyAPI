@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form action="" method="post">
+      <fieldset>
+        <h1 class="center-text">Sign Up</h1>
+        <label for="username">Username</label>
+        <input class="input-text _full-width" type="text" placeholder="username" name="username" id="username" required>
+        <label for="">Password</label>
+        <input class="input-text _full-width" type="password" placeholder="password" name="password" id="password" required>
+        <div class="_alignCenter">
+          <input type="submit" value="Register" class="btn _width75 _primary"></input>
+        </div>
+      </fieldset>
+    </form>
+{% endblock %}
