@@ -3,4 +3,4 @@ Flask-PyMongo==2.3.0
 Flask-RESTful==0.3.7
 requests==2.22.0
 uuid==1.30
-Werkzeug==0.16.0
+Werkzeug==2.2.3
